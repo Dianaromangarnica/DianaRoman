@@ -22,7 +22,7 @@ export default function Footer() {
 
           <div className="credit-item">
             <span className="credit-label">Diseñado por</span>
-            <span className="credit-name">Diana Roman</span>
+            <span className="credit-name">Diana Román Garnica</span>
             <a
               href="https://linkedin.com/in/diana-roman"
               target="_blank"
@@ -42,7 +42,7 @@ export default function Footer() {
 
           <div className="credit-item">
             <span className="credit-label">Desarrollado por</span>
-            <span className="credit-name">Fabián Roman</span>
+            <span className="credit-name">Fabián Román Garnica</span>
             <a
               href="https://github.com/fabian-roman"
               target="_blank"

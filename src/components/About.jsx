@@ -26,7 +26,7 @@ export default function About() {
                 {PROFILE_IMAGE ? (
                   <img
                     src={PROFILE_IMAGE}
-                    alt="Diana Roman"
+                    alt="Diana Román Garnica"
                     className="about-photo"
                   />
                 ) : (
@@ -52,11 +52,11 @@ export default function About() {
           <div className="about-text reveal reveal-delay-1">
             <p className="section-label">Sobre mí</p>
             <h2 className="section-title" style={{ marginBottom: '24px' }}>
-              Community Manager y <em>Diseñadora Gráfica</em><br />enfocada en marca y contenido
+              <em>Community Manager</em> y <em>Diseñadora Gráfica</em><br />enfocada en marca y contenido
             </h2>
 
             <p className="about-paragraph">
-              Soy Diana Roman, Community Manager y Diseñadora Gráfica con experiencia en la gestión de redes sociales,
+              Soy Diana Román Garnica, Community Manager y Diseñadora Gráfica con experiencia en la gestión de redes sociales,
               creación de contenido digital y desarrollo de identidad visual para marcas. He trabajado en la
               construcción y administración de redes institucionales y corporativas, creando contenido visual
               y audiovisual orientado a fortalecer la comunicación y el posicionamiento de marca.

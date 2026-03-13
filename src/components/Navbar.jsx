@@ -22,9 +22,9 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* ── Typewriter: espera 2s, luego escribe "Diana Roman" ── */
+  /* ── Typewriter: espera 2s, luego escribe "Diana Román Garnica" ── */
   useEffect(() => {
-    const fullText = 'Diana Roman'
+    const fullText = 'Diana Román Garnica'
     let timeout
 
     timeout = setTimeout(() => {
@@ -68,7 +68,7 @@ export default function Navbar() {
         <a href="#hero" className="nav-logo">
           {logoText}
           {typing && <span className="cursor">|</span>}
-          {!typing && logoText === 'Diana Roman' && <span className="dot">.</span>}
+          {!typing && logoText === 'Diana Román Garnica' && <span className="dot">.</span>}
         </a>
 
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>

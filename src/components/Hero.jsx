@@ -4,7 +4,6 @@ import './Hero.css'
 export default function Hero() {
   const badgeTextRef = useRef(null)
 
-  // Typewriter for the badge "Diseñadora gráfica - Community Manager"
   useEffect(() => {
     const text = 'Diseñadora gráfica - Community Manager'
     const el = badgeTextRef.current
@@ -18,7 +17,6 @@ export default function Hero() {
         setTimeout(type, 70)
       }
     }
-    // Start after 400ms
     const timer = setTimeout(type, 400)
     return () => clearTimeout(timer)
   }, [])
@@ -38,8 +36,7 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title animate-fade-up" style={{ animationDelay: '0.25s' }}>
-          Diana<br />
-          <em>Roman</em>
+          Diana Román Garnica
         </h1>
 
         <p className="hero-role animate-fade-up" style={{ animationDelay: '0.4s' }}>
@@ -56,7 +53,6 @@ export default function Hero() {
           <a href="#contact" className="btn-ghost">Trabajemos juntos</a>
         </div>
 
-        {/* Stats with staggered reveal */}
         <div className="hero-stats animate-fade-up" style={{ animationDelay: '0.85s' }}>
           {[
             { value: '3+', label: 'Años de experiencia' },

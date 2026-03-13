@@ -58,13 +58,22 @@
   padding-top: 100px;
 }
 
-/* ── Badge con borde que pulsa en dorado ── */
+/* ─────────────────────────────────────────
+   BADGE — rayo de luz recorriendo el borde
+───────────────────────────────────────── */
+
+/* Registrar la propiedad CSS custom para el ángulo animado */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  border: 1px solid var(--border-accent);
+  padding: 6px 16px 6px 10px;
   border-radius: 100px;
   font-size: 12px;
   font-weight: 400;
@@ -74,19 +83,17 @@
   background: var(--accent-soft);
   animation-fill-mode: both;
   opacity: 0;
-  /* Pulso del borde */
-  box-shadow: 0 0 0 0 rgba(180, 155, 120, 0);
-  animation: fadeUp 0.7s ease forwards, borderPulse 2.5s ease-in-out 1.2s infinite;
+  position: relative;
+  /* Borde base muy sutil */
+  border: 1px solid rgba(180, 155, 120, 0.18);
+  isolation: isolate;
 }
 
-@keyframes borderPulse {
-  0%   { box-shadow: 0 0 0 0   rgba(180,155,120, 0.55); border-color: rgba(180,155,120,0.35); }
-  50%  { box-shadow: 0 0 0 6px rgba(180,155,120, 0);    border-color: rgba(180,155,120,0.9);  }
-  100% { box-shadow: 0 0 0 0   rgba(180,155,120, 0);    border-color: rgba(180,155,120,0.35); }
-}
+  
 
 .badge-text {
-  min-width: 96px; /* evita salto de layout mientras escribe */
+  position: relative;
+  z-index: 1;
 }
 
 .badge-dot {
@@ -97,6 +104,8 @@
   box-shadow: 0 0 6px rgba(74,222,128,0.6);
   animation: blink 2s ease-in-out infinite;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes blink {
@@ -104,9 +113,11 @@
   50% { opacity: 0.4; }
 }
 
+/* ── Títulos ── */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
+  white-space: nowrap;
   font-weight: 300;
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -118,7 +129,7 @@
 .hero-title em {
   font-style: italic;
   color: var(--accent);
-  display: block;
+
 }
 
 .hero-role {
@@ -190,7 +201,7 @@
   transform: translateY(-2px);
 }
 
-/* ── Stats con pulso en el valor ── */
+/* ── Stats ── */
 .hero-stats {
   display: flex;
   gap: 48px;
@@ -213,16 +224,15 @@
   font-weight: 300;
   color: var(--accent);
   line-height: 1;
-  /* Pulso suave */
   animation: statGlow 3s ease-in-out infinite;
 }
 
-.hero-stat:nth-child(2) .hero-stat-value { animation-delay: 0.6s; }
+.hero-stat:nth-child(2) .hero-stat-value { animation-delay: 0.6s;  }
 .hero-stat:nth-child(3) .hero-stat-value { animation-delay: 1.2s; }
 
 @keyframes statGlow {
-  0%, 100% { text-shadow: none;                              opacity: 1;    }
-  50%       { text-shadow: 0 0 18px rgba(180,155,120,0.55);  opacity: 0.85; }
+  0%, 100% { text-shadow: none;                             opacity: 1;    }
+  50%       { text-shadow: 0 0 18px rgba(180,155,120,0.55); opacity: 0.85; }
 }
 
 .hero-stat-label {
@@ -265,18 +275,8 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: clamp(3rem, 15vw, 5rem);
-  }
-  .hero-actions {
-    flex-direction: column;
-    width: fit-content;
-  }
-  .hero-stats {
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-  .hero-scroll {
-    margin-top: 50px;
-  }
+  .hero-title  { font-size: clamp(3rem, 15vw, 5rem); }
+  .hero-actions { flex-direction: column; width: fit-content; }
+  .hero-stats  { gap: 28px; flex-wrap: wrap; }
+  .hero-scroll { margin-top: 50px; }
 }
