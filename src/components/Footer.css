@@ -1,0 +1,130 @@
+.footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 56px 0 36px;
+}
+
+/* ── Logo + tagline centrados ── */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+}
+
+.footer-logo:hover { color: var(--accent); }
+
+.dot { color: var(--accent); }
+
+.footer-tagline {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  animation: taglineGlow 3s ease-in-out infinite;
+}
+
+@keyframes taglineGlow {
+  0%, 100% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow:
+      0 0 12px rgba(255, 220, 130, 0.75),
+      0 0 28px rgba(255, 220, 130, 0.75);
+  }
+}
+
+/* ── Divider ── */
+.footer-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 32px;
+}
+
+/* ── Créditos centrados ── */
+.footer-credits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.credit-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.credit-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.credit-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Icono social */
+.credit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.credit-icon:hover {
+  border-color: var(--border-accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+/* Separador ✦ */
+.credit-sep {
+  font-size: 9px;
+  color: var(--border-accent);
+  opacity: 0.5;
+}
+
+/* ── Copyright ── */
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .footer-credits {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .credit-sep { display: none; }
+}

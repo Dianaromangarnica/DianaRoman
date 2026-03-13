@@ -1,0 +1,34 @@
+/* Section alternating backgrounds */
+#about {
+  background: var(--bg-primary);
+}
+
+#projects {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+#projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+#contact {
+  background: var(--bg-primary);
+  position: relative;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}

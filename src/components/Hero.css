@@ -1,0 +1,282 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(180,155,120,0.2) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: pulse 8s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(130,110,95,0.15) 0%, transparent 70%);
+  bottom: 50px;
+  left: -50px;
+  animation: pulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+}
+
+/* ── Badge con borde que pulsa en dorado ── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--border-accent);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-bottom: 32px;
+  background: var(--accent-soft);
+  animation-fill-mode: both;
+  opacity: 0;
+  /* Pulso del borde */
+  box-shadow: 0 0 0 0 rgba(180, 155, 120, 0);
+  animation: fadeUp 0.7s ease forwards, borderPulse 2.5s ease-in-out 1.2s infinite;
+}
+
+@keyframes borderPulse {
+  0%   { box-shadow: 0 0 0 0   rgba(180,155,120, 0.55); border-color: rgba(180,155,120,0.35); }
+  50%  { box-shadow: 0 0 0 6px rgba(180,155,120, 0);    border-color: rgba(180,155,120,0.9);  }
+  100% { box-shadow: 0 0 0 0   rgba(180,155,120, 0);    border-color: rgba(180,155,120,0.35); }
+}
+
+.badge-text {
+  min-width: 96px; /* evita salto de layout mientras escribe */
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  background: #4ade80;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(74,222,128,0.6);
+  animation: blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+  display: block;
+}
+
+.hero-role {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.hero-desc {
+  max-width: 480px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 44px;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 13px 32px;
+  background: var(--accent);
+  color: #0d0d0f;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.btn-primary:hover {
+  background: #c4a985;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(180,155,120,0.25);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 13px 32px;
+  border: 1px solid var(--border-accent);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ── Stats con pulso en el valor ── */
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 52px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  /* Pulso suave */
+  animation: statGlow 3s ease-in-out infinite;
+}
+
+.hero-stat:nth-child(2) .hero-stat-value { animation-delay: 0.6s; }
+.hero-stat:nth-child(3) .hero-stat-value { animation-delay: 1.2s; }
+
+@keyframes statGlow {
+  0%, 100% { text-shadow: none;                              opacity: 1;    }
+  50%       { text-shadow: 0 0 18px rgba(180,155,120,0.55);  opacity: 0.85; }
+}
+
+.hero-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Scroll indicator ── */
+.hero-scroll {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 70px;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--accent));
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%   { transform: scaleY(0); transform-origin: top;    opacity: 0; }
+  50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+.hero-scroll span {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transform: rotate(90deg);
+  transform-origin: left center;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: fit-content;
+  }
+  .hero-stats {
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .hero-scroll {
+    margin-top: 50px;
+  }
+}
