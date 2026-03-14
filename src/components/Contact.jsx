@@ -51,7 +51,7 @@ export default function Contact() {
             </p>
 
             <div className="contact-links reveal">
-              <a href="mailto:diana@example.com" className="contact-link">
+              <a href="mailto:drgarnica28@gmail.com" className="contact-link">
                 <div className="contact-link-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -60,11 +60,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <span className="contact-link-label">Email</span>
-                  <span className="contact-link-value">diana@example.com</span>
+                  <span className="contact-link-value">drgarnica28@gmail.com</span>
                 </div>
               </a>
 
-              <a href="https://linkedin.com/in/diana-roman" target="_blank" rel="noopener" className="contact-link">
+              <a href="https://www.linkedin.com/in/diana-cristina-rom%C3%A1n-garnica-321341224/" target="_blank" rel="noopener" className="contact-link">
                 <div className="contact-link-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -78,19 +78,6 @@ export default function Contact() {
                 </div>
               </a>
 
-              <a href="https://behance.net/diana-roman" target="_blank" rel="noopener" className="contact-link">
-                <div className="contact-link-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M2 6h7.5a3 3 0 0 1 0 6H2z"/>
-                    <path d="M2 12h8.5a3.5 3.5 0 0 1 0 7H2z"/>
-                    <path d="M15 7h7M15.5 12a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0z"/>
-                  </svg>
-                </div>
-                <div>
-                  <span className="contact-link-label">Behance</span>
-                  <span className="contact-link-value">diana-roman</span>
-                </div>
-              </a>
             </div>
           </div>
 
