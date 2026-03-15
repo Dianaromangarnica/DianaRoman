@@ -24,7 +24,7 @@ export default function Footer() {
             <span className="credit-label">Diseñado por</span>
             <span className="credit-name">Diana Román Garnica</span>
             <a
-              href="https://linkedin.com/in/diana-roman"
+              href="https://www.linkedin.com/in/diana-cristina-rom%C3%A1n-garnica-321341224/"
               target="_blank"
               rel="noopener"
               className="credit-icon"
@@ -44,7 +44,7 @@ export default function Footer() {
             <span className="credit-label">Desarrollado por</span>
             <span className="credit-name">Fabián Román Garnica</span>
             <a
-              href="https://github.com/fabian-roman"
+              href="https://github.com/FabianRoman"
               target="_blank"
               rel="noopener"
               className="credit-icon"
