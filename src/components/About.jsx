@@ -1,10 +1,11 @@
 import './About.css'
 import useScrollReveal from '../hooks/useScrollReveal'
+import prueba1 from '../assets/prueba1.jpg'
 
 // ── Pon la ruta de la foto aquí cuando la tengas ──────────────
 // Guarda la imagen en: public/about/diana.jpg
 // Luego cambia null por: '/about/diana.jpg'
-const PROFILE_IMAGE = "public/projects/prueba1.jpg"
+const PROFILE_IMAGE = prueba1
 
 const stats = [
   { value: '3+', label: 'Años de experiencia' },

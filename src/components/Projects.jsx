@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import './Projects.css'
 import useScrollReveal from '../hooks/useScrollReveal'
+import prueba2 from '../assets/prueba2.jpg'
+import prueba3 from '../assets/prueba3.jpg'
+import prueba4 from '../assets/prueba4.jpg'
 
 const projects = [
   {
@@ -11,7 +14,7 @@ const projects = [
     tags: ['Figma', 'User Research', 'Prototyping'],
     year: '2024',
     color: '#b49b78',
-    image: 'public/projects/prueba1.jpg',
+    image: prueba2,
   },
   {
     id: 2,
@@ -21,7 +24,7 @@ const projects = [
     tags: ['Design System', 'Figma', 'Variables'],
     year: '2024',
     color: '#8a9fa8',
-    image: 'public/projects/prueba2.jpg',
+    image: prueba3,
   },
   {
     id: 3,
@@ -31,7 +34,7 @@ const projects = [
     tags: ['UX Audit', 'Heuristics', 'User Testing'],
     year: '2023',
     color: '#9b8cb4',
-    image: 'public/projects/prueba3.jpg',
+    image: prueba4,
   },
   {
     id: 4,
@@ -41,7 +44,7 @@ const projects = [
     tags: ['Branding', 'Web Design', 'Illustrator'],
     year: '2023',
     color: '#a8b48c',
-    image: 'public/projects/prueba4.jpg',
+    image: prueba4,
   },
 ]
 
