@@ -46,10 +46,12 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 80%);
+  /* Degradado radial que desvanece desde el centro hacia los bordes */
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 0%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 0%, transparent 100%);
 }
 
 .hero-content {
@@ -89,7 +91,56 @@
   isolation: isolate;
 }
 
-  
+/* Rayo girando: gradiente cónico recortado como borde */
+.hero-badge::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent   0%,
+    transparent  65%,
+    rgba(255, 220, 130, 0.0)  68%,
+    rgba(255, 220, 130, 0.7)  75%,
+    rgba(255, 255, 200, 1.0)  79%,
+    rgba(255, 220, 130, 0.7)  83%,
+    rgba(255, 220, 130, 0.0)  88%,
+    transparent 100%
+  );
+  /* Solo muestra el contorno, no el relleno */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  animation: beamSpin 2.6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes beamSpin {
+  to { --beam-angle: 360deg; }
+}
+
+/* Resplandor difuso que sigue al rayo */
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent  70%,
+    rgba(180, 155, 120, 0.12) 79%,
+    rgba(180, 155, 120, 0.0)  88%,
+    transparent 100%
+  );
+  filter: blur(6px);
+  animation: beamSpin 2.6s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
 
 .badge-text {
   position: relative;
@@ -116,10 +167,9 @@
 /* ── Títulos ── */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
-  white-space: nowrap;
+  font-size: clamp(2rem, 6.5vw, 5.2rem);
   font-weight: 300;
-  line-height: 0.95;
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
   animation-fill-mode: both;
@@ -275,7 +325,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title  { font-size: clamp(3rem, 15vw, 5rem); }
+  .hero-title  { font-size: clamp(2rem, 10vw, 3.4rem); }
   .hero-actions { flex-direction: column; width: fit-content; }
   .hero-stats  { gap: 28px; flex-wrap: wrap; }
   .hero-scroll { margin-top: 50px; }
